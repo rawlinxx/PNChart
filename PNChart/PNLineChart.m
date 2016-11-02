@@ -331,6 +331,10 @@
         chartLine.path = progressline.CGPath;
         pointLayer.path = pointPath.CGPath;
 
+        if (chartData.isInflexionPointSolid) {
+            pointLayer.fillColor = chartData.inflexionPointColor.CGColor;
+        }
+        
         [CATransaction begin];
 
         [chartLine addAnimation:self.pathAnimation forKey:@"strokeEndAnimation"];
